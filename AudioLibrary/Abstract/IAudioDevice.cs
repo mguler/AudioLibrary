@@ -4,6 +4,7 @@ namespace AudioLibrary.Core.Abstract
 {
     public interface IAudioDevice : IDisposable
     {
+        event AudioEventHandler AudioEvent;
         bool IsOpen { get; }
         short DeviceIndex { get; }
         string Name { get; }

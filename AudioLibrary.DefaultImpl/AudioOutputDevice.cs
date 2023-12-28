@@ -8,6 +8,8 @@ namespace AudioLibrary.DefaultImpl
 {
     public class AudioOutputDevice : IAudioOutputDevice
     {
+        public event AudioEventHandler AudioEvent;
+
         public bool IsOpen { get; private set; }
         public short DeviceIndex { get; private set; }
         public string Name { get => _waveInOutCaps.szPname; }
@@ -106,6 +108,7 @@ namespace AudioLibrary.DefaultImpl
 
         private void WaveOutProc(IntPtr hwi, uint uMsg, IntPtr dwInstance, ref WAVEINOUTHEADER waveOutHeader, IntPtr dwReserved)
         {
+            AudioEvent?.Invoke((AudioEventType)uMsg);
             Debug.WriteLine(uMsg);
             switch (uMsg)
             {

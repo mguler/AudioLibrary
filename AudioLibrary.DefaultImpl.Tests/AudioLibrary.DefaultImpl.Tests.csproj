@@ -16,4 +16,9 @@
     <PackageReference Include="coverlet.collector" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AudioLibrary.DefaultImpl\AudioLibrary.DefaultImpl.csproj" />
+    <ProjectReference Include="..\AudioLibrary\AudioLibrary.Core.csproj" />
+  </ItemGroup>
+
 </Project>
