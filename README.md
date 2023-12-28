@@ -1,3 +1,3 @@
 # AudioLibrary
 
-A library for recording and playback audio
+A library for recording and playback audio data
